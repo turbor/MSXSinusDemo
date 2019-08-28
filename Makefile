@@ -6,3 +6,7 @@ clean:
 
 msxsindm.rom:	*.asc
 	pasmo --bin --nocase msxsindm.asc msxsindm.rom msxsindm.symbol msxsindm.publics
+
+scrollertext.asc:	scrollertext.xpm
+	perl xpmtodb.pl scrollertext.xpm /tmp/1.asc /tmp/2.asc
+	perl correct_asc_table.pl /tmp/1.asc scrollertext.asc
